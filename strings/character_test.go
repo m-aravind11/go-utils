@@ -29,10 +29,10 @@ func TestIsUpper(t *testing.T) {
 		{args: args{ch: '='}, want: false},
 		{args: args{ch: '\''}, want: false},
 	}
-	for _, tt := range tests {
-		t.Run(fmt.Sprintf("TestIsUpper(%v)", tt.args.ch), func(t *testing.T) {
-			if got := IsUpper(tt.args.ch); got != tt.want {
-				t.Errorf("IsUpper(%v) = %v, want %v", tt.args.ch, got, tt.want)
+	for _, input := range tests {
+		t.Run(fmt.Sprintf("TestIsUpper(%v)", input.args.ch), func(t *testing.T) {
+			if got := IsUpper(input.args.ch); got != input.want {
+				t.Errorf("IsUpper(%v) = %v, want %v", input.args.ch, got, input.want)
 			}
 		})
 	}
@@ -62,10 +62,10 @@ func TestIsLower(t *testing.T) {
 		{args: args{ch: '='}, want: false},
 		{args: args{ch: '\''}, want: false},
 	}
-	for _, tt := range tests {
-		t.Run(fmt.Sprintf("TestIsLower(%v)", tt.args.ch), func(t *testing.T) {
-			if got := IsLower(tt.args.ch); got != tt.want {
-				t.Errorf("IsLower(%v) = %v, want %v", tt.args.ch, got, tt.want)
+	for _, input := range tests {
+		t.Run(fmt.Sprintf("TestIsLower(%v)", input.args.ch), func(t *testing.T) {
+			if got := IsLower(input.args.ch); got != input.want {
+				t.Errorf("IsLower(%v) = %v, want %v", input.args.ch, got, input.want)
 			}
 		})
 	}
@@ -95,10 +95,10 @@ func TestIsLetter(t *testing.T) {
 		{args: args{ch: '='}, want: false},
 		{args: args{ch: '\''}, want: false},
 	}
-	for _, tt := range tests {
-		t.Run(fmt.Sprintf("TestIsLetter(%v)", tt.args.ch), func(t *testing.T) {
-			if got := IsLetter(tt.args.ch); got != tt.want {
-				t.Errorf("IsLetter(%v) = %v, want %v", tt.args.ch, got, tt.want)
+	for _, input := range tests {
+		t.Run(fmt.Sprintf("TestIsLetter(%v)", input.args.ch), func(t *testing.T) {
+			if got := IsLetter(input.args.ch); got != input.want {
+				t.Errorf("TestIsLetter(%v) = %v, want %v", input.args.ch, got, input.want)
 			}
 		})
 	}
@@ -128,10 +128,10 @@ func TestIsDigit(t *testing.T) {
 		{args: args{ch: '='}, want: false},
 		{args: args{ch: '\''}, want: false},
 	}
-	for _, tt := range tests {
-		t.Run(fmt.Sprintf("TestIsDigit(%v)", tt.args.ch), func(t *testing.T) {
-			if got := IsDigit(tt.args.ch); got != tt.want {
-				t.Errorf("TestIsDigit(%v) = %v, want %v", tt.args.ch, got, tt.want)
+	for _, input := range tests {
+		t.Run(fmt.Sprintf("TestIsDigit(%v)", input.args.ch), func(t *testing.T) {
+			if got := IsDigit(input.args.ch); got != input.want {
+				t.Errorf("TestIsDigit(%v) = %v, want %v", input.args.ch, got, input.want)
 			}
 		})
 	}
@@ -161,10 +161,10 @@ func TestIsAlphaNumeric(t *testing.T) {
 		{args: args{ch: '='}, want: false},
 		{args: args{ch: '\''}, want: false},
 	}
-	for _, tt := range tests {
-		t.Run(fmt.Sprintf("TestIsAlphaNumeric(%v)", tt.args.ch), func(t *testing.T) {
-			if got := IsAlphaNumeric(tt.args.ch); got != tt.want {
-				t.Errorf("TestIsAlphaNumeric(%v) = %v, want %v", tt.args.ch, got, tt.want)
+	for _, input := range tests {
+		t.Run(fmt.Sprintf("TestIsAlphaNumeric(%v)", input.args.ch), func(t *testing.T) {
+			if got := IsAlphaNumeric(input.args.ch); got != input.want {
+				t.Errorf("TestIsAlphaNumeric(%v) = %v, want %v", input.args.ch, got, input.want)
 			}
 		})
 	}
@@ -196,10 +196,10 @@ func TestIsVowel(t *testing.T) {
 		{args: args{ch: '='}, want: false},
 		{args: args{ch: '\''}, want: false},
 	}
-	for _, tt := range tests {
-		t.Run(fmt.Sprintf("TestIsVowel(%v)", tt.args.ch), func(t *testing.T) {
-			if got := IsVowel(tt.args.ch); got != tt.want {
-				t.Errorf("TestIsVowel(%v) = %v, want %v", tt.args.ch, got, tt.want)
+	for _, input := range tests {
+		t.Run(fmt.Sprintf("TestIsVowel(%v)", input.args.ch), func(t *testing.T) {
+			if got := IsVowel(input.args.ch); got != input.want {
+				t.Errorf("TestIsVowel(%v) = %v, want %v", input.args.ch, got, input.want)
 			}
 		})
 	}
@@ -231,16 +231,16 @@ func TestIsConsonant(t *testing.T) {
 		{args: args{ch: '='}, want: false},
 		{args: args{ch: '\''}, want: false},
 	}
-	for _, tt := range tests {
-		t.Run(fmt.Sprintf("TestIsConsonant(%v)", tt.args.ch), func(t *testing.T) {
-			if got := IsConsonant(tt.args.ch); got != tt.want {
-				t.Errorf("TestIsConsonant(%v) = %v, want %v", tt.args.ch, got, tt.want)
+	for _, input := range tests {
+		t.Run(fmt.Sprintf("TestIsConsonant(%v)", input.args.ch), func(t *testing.T) {
+			if got := IsConsonant(input.args.ch); got != input.want {
+				t.Errorf("TestIsConsonant(%v) = %v, want %v", input.args.ch, got, input.want)
 			}
 		})
 	}
 }
 
-func TestToLower(t *testing.T) {
+func TesinputoLower(t *testing.T) {
 	type args struct {
 		ch rune
 	}
@@ -266,16 +266,16 @@ func TestToLower(t *testing.T) {
 		{args: args{ch: '='}, want: '='},
 		{args: args{ch: '\''}, want: '\''},
 	}
-	for _, tt := range tests {
-		t.Run(fmt.Sprintf("TestToLower(%v)", tt.args.ch), func(t *testing.T) {
-			if got := ToLower(tt.args.ch); got != tt.want {
-				t.Errorf("TestToLower(%v) = %v, want %v", tt.args.ch, got, tt.want)
+	for _, input := range tests {
+		t.Run(fmt.Sprintf("TesinputoLower(%v)", input.args.ch), func(t *testing.T) {
+			if got := ToLower(input.args.ch); got != input.want {
+				t.Errorf("TesinputoLower(%v) = %v, want %v", input.args.ch, got, input.want)
 			}
 		})
 	}
 }
 
-func TestToUpper(t *testing.T) {
+func TesinputoUpper(t *testing.T) {
 	type args struct {
 		ch rune
 	}
@@ -301,10 +301,10 @@ func TestToUpper(t *testing.T) {
 		{args: args{ch: '='}, want: '='},
 		{args: args{ch: '\''}, want: '\''},
 	}
-	for _, tt := range tests {
-		t.Run(fmt.Sprintf("TestToUpper(%v)", tt.args.ch), func(t *testing.T) {
-			if got := ToUpper(tt.args.ch); got != tt.want {
-				t.Errorf("TestToUpper(%v) = %v, want %v", tt.args.ch, got, tt.want)
+	for _, input := range tests {
+		t.Run(fmt.Sprintf("TesinputoUpper(%v)", input.args.ch), func(t *testing.T) {
+			if got := ToUpper(input.args.ch); got != input.want {
+				t.Errorf("TesinputoUpper(%v) = %v, want %v", input.args.ch, got, input.want)
 			}
 		})
 	}
