@@ -41,34 +41,34 @@ func round(val float64, places int32) float64 {
 	return math.Round(val*shift) / shift
 }
 
-func RoundUp(val interface{}, places int32) (float64, error) {
+func Ceil(val interface{}, places int32) (float64, error) {
 	switch v := val.(type) {
 	case int:
 		fval := float64(v)
-		return roundUp(fval, places), nil
+		return ceil(fval, places), nil
 	case int32:
 		fval := float64(v)
-		return roundUp(fval, places), nil
+		return ceil(fval, places), nil
 	case int64:
 		fval := float64(v)
-		return roundUp(fval, places), nil
+		return ceil(fval, places), nil
 	case float32:
 		fval := float64(v)
-		return roundUp(fval, places), nil
+		return ceil(fval, places), nil
 	case float64:
-		return roundUp(v, places), nil
+		return ceil(v, places), nil
 	case string:
 		fval, err := strconv.ParseFloat(v, 64)
 		if err != nil {
 			return 0, err
 		}
-		return roundUp(fval, places), nil
+		return ceil(fval, places), nil
 	default:
 		return 0, errors.New("value is not a float or string")
 	}
 }
 
-func roundUp(val float64, places int32) float64 {
+func ceil(val float64, places int32) float64 {
 	if places < 0 {
 		places = 0
 	}
@@ -76,34 +76,34 @@ func roundUp(val float64, places int32) float64 {
 	return math.Ceil(val*shift) / shift
 }
 
-func RoundDown(val interface{}, places int32) (float64, error) {
+func Floor(val interface{}, places int32) (float64, error) {
 	switch v := val.(type) {
 	case int:
 		fval := float64(v)
-		return roundDown(fval, places), nil
+		return floor(fval, places), nil
 	case int32:
 		fval := float64(v)
-		return roundDown(fval, places), nil
+		return floor(fval, places), nil
 	case int64:
 		fval := float64(v)
-		return roundDown(fval, places), nil
+		return floor(fval, places), nil
 	case float32:
 		fval := float64(v)
-		return roundDown(fval, places), nil
+		return floor(fval, places), nil
 	case float64:
-		return roundDown(v, places), nil
+		return floor(v, places), nil
 	case string:
 		fval, err := strconv.ParseFloat(v, 64)
 		if err != nil {
 			return 0, err
 		}
-		return roundDown(fval, places), nil
+		return floor(fval, places), nil
 	default:
 		return 0, errors.New("value is not a float or string")
 	}
 }
 
-func roundDown(val float64, places int32) float64 {
+func floor(val float64, places int32) float64 {
 	if places < 0 {
 		places = 0
 	}

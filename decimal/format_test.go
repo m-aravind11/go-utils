@@ -69,7 +69,7 @@ func TestRoundAndFormat(t *testing.T) {
 	}
 }
 
-func TestRoundUpAndFormat(t *testing.T) {
+func TestCeilAndFormat(t *testing.T) {
 	tests := []struct {
 		val     interface{}
 		places  int32
@@ -118,22 +118,22 @@ func TestRoundUpAndFormat(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		t.Run(fmt.Sprintf("TestRoundUpAndFormat(%v, %d)", tt.val, tt.places), func(t *testing.T) {
-			got, err := RoundUpAndFormat(tt.val, tt.places)
+		t.Run(fmt.Sprintf("TestCeilAndFormat(%v, %d)", tt.val, tt.places), func(t *testing.T) {
+			got, err := CeilAndFormat(tt.val, tt.places)
 
 			if err != nil && !tt.wantErr {
-				t.Errorf("TestRoundUpAndFormat(%v, %d) got error = %v, wantErr %v", tt.val, tt.places, err, tt.wantErr)
+				t.Errorf("TestCeilAndFormat(%v, %d) got error = %v, wantErr %v", tt.val, tt.places, err, tt.wantErr)
 				return
 			}
 
 			if tt.want != got {
-				t.Errorf("TestRoundUpAndFormat(%v, %d) = %v, want %v", tt.val, tt.places, got, tt.want)
+				t.Errorf("TestCeilAndFormat(%v, %d) = %v, want %v", tt.val, tt.places, got, tt.want)
 			}
 		})
 	}
 }
 
-func TestRoundDownAndFormat(t *testing.T) {
+func TestFloorAndFormat(t *testing.T) {
 	tests := []struct {
 		val     interface{}
 		places  int32
@@ -182,16 +182,16 @@ func TestRoundDownAndFormat(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		t.Run(fmt.Sprintf("TestRoundDownAndFormat(%v, %d)", tt.val, tt.places), func(t *testing.T) {
-			got, err := RoundDownAndFormat(tt.val, tt.places)
+		t.Run(fmt.Sprintf("TestFloorAndFormat(%v, %d)", tt.val, tt.places), func(t *testing.T) {
+			got, err := FloorAndFormat(tt.val, tt.places)
 
 			if err != nil && !tt.wantErr {
-				t.Errorf("TestRoundDownAndFormat(%v, %d) got error = %v, wantErr %v", tt.val, tt.places, err, tt.wantErr)
+				t.Errorf("TestFloorAndFormat(%v, %d) got error = %v, wantErr %v", tt.val, tt.places, err, tt.wantErr)
 				return
 			}
 
 			if tt.want != got {
-				t.Errorf("TestRoundDownAndFormat(%v, %d) = %v, want %v", tt.val, tt.places, got, tt.want)
+				t.Errorf("TestFloorAndFormat(%v, %d) = %v, want %v", tt.val, tt.places, got, tt.want)
 			}
 		})
 	}
