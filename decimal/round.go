@@ -8,6 +8,15 @@ import (
 
 func Round(val interface{}, places int32) (float64, error) {
 	switch v := val.(type) {
+	case int:
+		fval := float64(v)
+		return round(fval, places), nil
+	case int32:
+		fval := float64(v)
+		return round(fval, places), nil
+	case int64:
+		fval := float64(v)
+		return round(fval, places), nil
 	case float32:
 		fval := float64(v)
 		return round(fval, places), nil
@@ -34,6 +43,15 @@ func round(val float64, places int32) float64 {
 
 func RoundUp(val interface{}, places int32) (float64, error) {
 	switch v := val.(type) {
+	case int:
+		fval := float64(v)
+		return roundUp(fval, places), nil
+	case int32:
+		fval := float64(v)
+		return roundUp(fval, places), nil
+	case int64:
+		fval := float64(v)
+		return roundUp(fval, places), nil
 	case float32:
 		fval := float64(v)
 		return roundUp(fval, places), nil
@@ -60,6 +78,15 @@ func roundUp(val float64, places int32) float64 {
 
 func RoundDown(val interface{}, places int32) (float64, error) {
 	switch v := val.(type) {
+	case int:
+		fval := float64(v)
+		return roundDown(fval, places), nil
+	case int32:
+		fval := float64(v)
+		return roundDown(fval, places), nil
+	case int64:
+		fval := float64(v)
+		return roundDown(fval, places), nil
 	case float32:
 		fval := float64(v)
 		return roundDown(fval, places), nil
