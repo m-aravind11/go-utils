@@ -56,7 +56,7 @@ func TestRound(t *testing.T) {
 	}
 }
 
-func TestRoundUp(t *testing.T) {
+func TestCeil(t *testing.T) {
 	tests := []struct {
 		val     interface{}
 		places  int32
@@ -92,22 +92,22 @@ func TestRoundUp(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		t.Run(fmt.Sprintf("TestRoundUp(%v, %d)", tt.val, tt.places), func(t *testing.T) {
-			got, err := RoundUp(tt.val, tt.places)
+		t.Run(fmt.Sprintf("TestCeil(%v, %d)", tt.val, tt.places), func(t *testing.T) {
+			got, err := Ceil(tt.val, tt.places)
 
 			if err != nil && !tt.wantErr {
-				t.Errorf("TestRoundUp(%v, %d) got error = %v, wantErr %v", tt.val, tt.places, err, tt.wantErr)
+				t.Errorf("TestCeil(%v, %d) got error = %v, wantErr %v", tt.val, tt.places, err, tt.wantErr)
 				return
 			}
 
 			if tt.want != got {
-				t.Errorf("TestRoundUp(%v, %d) = %v, want %v", tt.val, tt.places, got, tt.want)
+				t.Errorf("TestCeil(%v, %d) = %v, want %v", tt.val, tt.places, got, tt.want)
 			}
 		})
 	}
 }
 
-func TestRoundDown(t *testing.T) {
+func TestFloor(t *testing.T) {
 	tests := []struct {
 		val     interface{}
 		places  int32
@@ -143,16 +143,16 @@ func TestRoundDown(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		t.Run(fmt.Sprintf("TestRoundDown(%v, %d)", tt.val, tt.places), func(t *testing.T) {
-			got, err := RoundDown(tt.val, tt.places)
+		t.Run(fmt.Sprintf("TestFloor(%v, %d)", tt.val, tt.places), func(t *testing.T) {
+			got, err := Floor(tt.val, tt.places)
 
 			if err != nil && !tt.wantErr {
-				t.Errorf("TestRoundDown(%v, %d) got error = %v, wantErr %v", tt.val, tt.places, err, tt.wantErr)
+				t.Errorf("TestFloor(%v, %d) got error = %v, wantErr %v", tt.val, tt.places, err, tt.wantErr)
 				return
 			}
 
 			if tt.want != got {
-				t.Errorf("TestRoundDown(%v, %d) = %v, want %v", tt.val, tt.places, got, tt.want)
+				t.Errorf("TestFloor(%v, %d) = %v, want %v", tt.val, tt.places, got, tt.want)
 			}
 		})
 	}

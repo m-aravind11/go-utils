@@ -12,16 +12,16 @@ func RoundAndFormat(val interface{}, places int32) (string, error) {
 	return strconv.FormatFloat(rounded, 'f', int(places), 64), nil
 }
 
-func RoundUpAndFormat(val interface{}, places int32) (string, error) {
-	rounded, err := RoundUp(val, places)
+func CeilAndFormat(val interface{}, places int32) (string, error) {
+	rounded, err := Ceil(val, places)
 	if err != nil {
 		return "", err
 	}
 	return strconv.FormatFloat(rounded, 'f', int(places), 64), nil
 }
 
-func RoundDownAndFormat(val interface{}, places int32) (string, error) {
-	rounded, err := RoundDown(val, places)
+func FloorAndFormat(val interface{}, places int32) (string, error) {
+	rounded, err := Floor(val, places)
 	if err != nil {
 		return "", err
 	}
