@@ -42,7 +42,7 @@ func TestRound(t *testing.T) {
 	}
 
 	for _, input := range tests {
-		t.Run(fmt.Sprintf("Round(%v, %d)", input.val, input.places), func(t *testing.T) {
+		t.Run(fmt.Sprintf("TestRound(%v, %d)", input.val, input.places), func(t *testing.T) {
 			got, err := Round(input.val, input.places)
 
 			if err != nil {
@@ -99,12 +99,12 @@ func TestCeil(t *testing.T) {
 
 			if err != nil {
 				if input.wantErr == nil || input.wantErr.Error() != err.Error() {
-					t.Errorf("TestCeil(%v, %d) got error = %v, wantErr %v", input.val, input.places, err, input.wantErr)
+					t.Errorf("Ceil(%v, %d) got error = %v, wantErr %v", input.val, input.places, err, input.wantErr)
 				}
 			}
 
 			if input.want != got {
-				t.Errorf("TestCeil(%v, %d) = %v, want %v", input.val, input.places, got, input.want)
+				t.Errorf("Ceil(%v, %d) = %v, want %v", input.val, input.places, got, input.want)
 			}
 		})
 	}
@@ -151,12 +151,12 @@ func TestFloor(t *testing.T) {
 
 			if err != nil {
 				if input.wantErr == nil || input.wantErr.Error() != err.Error() {
-					t.Errorf("TestCeil(%v, %d) got error = %v, wantErr %v", input.val, input.places, err, input.wantErr)
+					t.Errorf("Floor(%v, %d) got error = %v, wantErr %v", input.val, input.places, err, input.wantErr)
 				}
 			}
 
 			if input.want != got {
-				t.Errorf("TestFloor(%v, %d) = %v, want %v", input.val, input.places, got, input.want)
+				t.Errorf("Floor(%v, %d) = %v, want %v", input.val, input.places, got, input.want)
 			}
 		})
 	}

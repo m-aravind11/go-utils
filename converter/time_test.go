@@ -79,19 +79,19 @@ func TestSecsToDHMS(t *testing.T) {
 		{91952342, 1064, 6, 19, 2},
 	}
 	for _, input := range tests {
-		t.Run(fmt.Sprintf("TestSecsToHMS(%v)", input.secs), func(t *testing.T) {
+		t.Run(fmt.Sprintf("TestSecsToDHMS(%v)", input.secs), func(t *testing.T) {
 			d, h, m, s := SecsToDHMS(input.secs)
 			if input.wantDays != d {
-				t.Errorf("SecsToHMS() days = %v, want %v", d, input.wantDays)
+				t.Errorf("SecsToDHMS() days = %v, want %v", d, input.wantDays)
 			}
 			if input.wantHrs != h {
-				t.Errorf("SecsToHMS() hrs = %v, want %v", h, input.wantHrs)
+				t.Errorf("SecsToDHMS() hrs = %v, want %v", h, input.wantHrs)
 			}
 			if input.wantMins != m {
-				t.Errorf("SecsToHMS() mins = %v, want %v", m, input.wantMins)
+				t.Errorf("SecsToDHMS() mins = %v, want %v", m, input.wantMins)
 			}
 			if input.wantSecs != s {
-				t.Errorf("SecsToHMS() secs = %v, want %v", s, input.wantSecs)
+				t.Errorf("SecsToDHMS() secs = %v, want %v", s, input.wantSecs)
 			}
 		})
 	}
@@ -111,7 +111,7 @@ func TestMinsToSecs(t *testing.T) {
 	for _, input := range tests {
 		t.Run(fmt.Sprintf("TestMinsToSecs(%v)", input.mins), func(t *testing.T) {
 			if got := MinsToSecs(input.mins); got != input.want {
-				t.Errorf("TestMinsToSecs() = %v, want %v", got, input.want)
+				t.Errorf("MinsToSecs() = %v, want %v", got, input.want)
 			}
 		})
 	}
@@ -168,7 +168,7 @@ func TestMinsToDHM(t *testing.T) {
 		{91952342, 63855, 19, 2},
 	}
 	for _, input := range tests {
-		t.Run(fmt.Sprintf("TestSecsToDHM(%v)", input.mins), func(t *testing.T) {
+		t.Run(fmt.Sprintf("TestMinsToDHM(%v)", input.mins), func(t *testing.T) {
 			d, h, m := MinsToDHM(input.mins)
 			if input.wantDays != d {
 				t.Errorf("MinsToDHM() days = %v, want %v", d, input.wantDays)
@@ -197,7 +197,7 @@ func TestHrsToMins(t *testing.T) {
 	for _, input := range tests {
 		t.Run(fmt.Sprintf("TestHrsToMins(%v)", input.hrs), func(t *testing.T) {
 			if got := HrsToMins(input.hrs); got != input.want {
-				t.Errorf("TestHrsToMins() = %v, want %v", got, input.want)
+				t.Errorf("HrsToMins() = %v, want %v", got, input.want)
 			}
 		})
 	}
