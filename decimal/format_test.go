@@ -60,12 +60,12 @@ func TestRoundAndFormat(t *testing.T) {
 
 			if err != nil {
 				if input.wantErr == nil || input.wantErr.Error() != err.Error() {
-					t.Errorf("TestRoundAndFormat(%v, %d) got error = %v, wantErr %v", input.val, input.places, err, input.wantErr)
+					t.Errorf("RoundAndFormat(%v, %d) got error = %v, wantErr %v", input.val, input.places, err, input.wantErr)
 				}
 			}
 
 			if input.want != got {
-				t.Errorf("TestRoundAndFormat(%v, %d) = %v, want %v", input.val, input.places, got, input.want)
+				t.Errorf("RoundAndFormat(%v, %d) = %v, want %v", input.val, input.places, got, input.want)
 			}
 		})
 	}
@@ -125,12 +125,12 @@ func TestCeilAndFormat(t *testing.T) {
 
 			if err != nil {
 				if input.wantErr == nil || input.wantErr.Error() != err.Error() {
-					t.Errorf("TestCeilAndFormat(%v, %d) got error = %v, wantErr %v", input.val, input.places, err, input.wantErr)
+					t.Errorf("CeilAndFormat(%v, %d) got error = %v, wantErr %v", input.val, input.places, err, input.wantErr)
 				}
 			}
 
 			if input.want != got {
-				t.Errorf("TestCeilAndFormat(%v, %d) = %v, want %v", input.val, input.places, got, input.want)
+				t.Errorf("CeilAndFormat(%v, %d) = %v, want %v", input.val, input.places, got, input.want)
 			}
 		})
 	}
@@ -190,12 +190,12 @@ func TestFloorAndFormat(t *testing.T) {
 
 			if err != nil {
 				if input.wantErr == nil || input.wantErr.Error() != err.Error() {
-					t.Errorf("TestCeilAndFormat(%v, %d) got error = %v, wantErr %v", input.val, input.places, err, input.wantErr)
+					t.Errorf("FloorAndFormat(%v, %d) got error = %v, wantErr %v", input.val, input.places, err, input.wantErr)
 				}
 			}
 
 			if input.want != got {
-				t.Errorf("TestFloorAndFormat(%v, %d) = %v, want %v", input.val, input.places, got, input.want)
+				t.Errorf("FloorAndFormat(%v, %d) = %v, want %v", input.val, input.places, got, input.want)
 			}
 		})
 	}
