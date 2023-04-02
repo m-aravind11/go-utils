@@ -217,7 +217,7 @@ func TestHrsToSecs(t *testing.T) {
 	for _, input := range tests {
 		t.Run(fmt.Sprintf("TestHrsToSecs(%v)", input.hrs), func(t *testing.T) {
 			if got := HrsToSecs(input.hrs); got != input.want {
-				t.Errorf("TestHrsToSecs() = %v, want %v", got, input.want)
+				t.Errorf("HrsToSecs() = %v, want %v", got, input.want)
 			}
 		})
 	}
